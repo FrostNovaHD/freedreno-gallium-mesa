@@ -35,6 +35,7 @@ jobs:
             -Dradeon=disabled \
             -Damdgpu=disabled \
             -Dnouveau=disabled \
+            -Dllvm=toolchains/llvm/prebuilt/aarch64-linux-android \
             -Dvmwgfx=disabled \
             -Dfreedreno=enabled \
             -Dvc4=disabled \
@@ -55,6 +56,7 @@ jobs:
             -Dglx=disabled \
             -Dopengl=true \
             -Dosmesa=true \
+            -Dllvm=toolchains/llvm/prebuilt/aarch64-linux-android \
             -Dvulkan-drivers= \
             -Dgallium-drivers=freedreno,zink,swrast \
             -Dfreedreno-kmds=kgsl \
