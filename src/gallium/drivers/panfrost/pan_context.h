@@ -119,9 +119,9 @@ struct panfrost_streamout {
 };
 
 struct panfrost_cs {
-        struct kbase_cs base;
+ //       struct kbase_cs base;
         struct panfrost_bo *bo;
-        pan_command_stream cs;
+    //    pan_command_stream cs;
         mali_ptr event_ptr;
         uint64_t seqnum;
         mali_ptr kcpu_event_ptr;
