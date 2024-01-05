@@ -78,11 +78,11 @@ const struct panfrost_model panfrost_model_list[] = {
 /* clang-format on */
 
 const struct panfrost_model panfrost_unknown_model = {
-   .gpu_id = 0,
-   .name = "Unknowm Mali device (Panfrost)",
-   .performance_counters = "AAAA",
-   .min_rev_anisotropic = NO_ANISO, 
-   .tilebuffer_size = 8192, 
+   .gpu_id = 0xa867,
+   .name = "Unknown Mali device (Panfrost)",
+   .performance_counters = "TNAx",
+   .min_rev_anisotropic = HAS_ANISO, 
+   .tilebuffer_size = 16384, 
    .quirks = {}, 
 };
 
