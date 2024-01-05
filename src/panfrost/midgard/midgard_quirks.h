@@ -91,7 +91,7 @@ midgard_get_quirks(unsigned gpu_id)
       return 0;
 
    default:
-      case 0x880;
+      return 0;
    }
 }
 
