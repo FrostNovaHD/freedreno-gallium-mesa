@@ -91,7 +91,7 @@ midgard_get_quirks(unsigned gpu_id)
       return 0;
 
    default:
-      return 0;
+      return 0x620;
    }
 }
 
