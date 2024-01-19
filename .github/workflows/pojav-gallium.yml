@@ -64,6 +64,13 @@ jobs:
             -Dshared-glapi=false \
             -Dbuildtype=debug
           ninja -C "build-android" install
+      - name: striping
+        run: |
+          if [ "${{matrix.arch}}" == "arm32" ]; then
+          llvm-strip --strip-all  /tmp/mesa/lib/libOSMesa.so.8.0.0
+          else
+          llvm-strip --strip-all /tmp/mesa/lib/libOSMesa.so.8.0.0
+          fi
       - name: Upload libraries
         uses: actions/upload-artifact@v2
         with:
