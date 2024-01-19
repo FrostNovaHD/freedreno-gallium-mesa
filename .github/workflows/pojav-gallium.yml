@@ -63,6 +63,13 @@ jobs:
           ninja -C "build-android" install
           cd /tmp/mesa/lib
           mv libOSMesa.so libOSMesa_znL.so
+      - name: striping
+        run: |
+          if [ "${{matrix.arch}}" == "arm32" ]; then
+          llvm-strip --strip-all  /tmp/mesa/lib/libOSMesa_znL.so
+          else
+          llvm-strip --strip-all /tmp/mesa/lib/libOSMesa_znL.so
+          fi
       - name: Upload libraries
         uses: actions/upload-artifact@v2
         with:
