@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: |
           sudo apt update
-          sudo apt install -y meson libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
+          sudo apt install -y meson libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev llvm
           pip3 install mako
           export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
           envsubst <android-drm-${{matrix.arch}} >build-crossfile-drm
@@ -63,8 +63,16 @@ jobs:
           ninja -C "build-android" install
           cd /tmp/mesa/lib
           mv libOSMesa.so libOSMesa_znL.so
+      - name: striping
+        run: |
+          if [ "${{matrix.arch}}" == "arm32" ]; then
+          llvm-strip --strip-all  /tmp/mesa/lib/libOSMesa_znL.so
+          else
+          llvm-strip --strip-all /tmp/mesa/lib/libOSMesa_znL.so
+          fi
       - name: Upload libraries
         uses: actions/upload-artifact@v2
         with:
           name: libOSMesa_znL_${{matrix.arch}}
           path: /tmp/mesa/lib/libOSMesa_znL.so
+       
