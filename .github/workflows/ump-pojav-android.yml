@@ -74,7 +74,7 @@ jobs:
             -Dandroid-stub=true \
             -Dgallium-drivers= \
             -Dvulkan-drivers=freedreno \
-            -Dfreedreno-kmds=msm,kgsl \
+            -Dfreedreno-kmds=kgsl \
             -Dandroid-strict=false \
             -Db_lto=true
           ninja -C "build-android-turnip" install
