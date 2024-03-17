@@ -82,6 +82,13 @@ jobs:
           mv /tmp/mesa/lib/* /tmp/mesa/toupload/
           cd /tmp/mesa/toupload
           mv libOSMesa.so.8.0.0 libOSMesa.so
+      - name: striping
+        run: |
+          if [ "${{matrix.arch}}" == "arm32" ]; then
+          llvm-strip --strip-all  /tmp/mesa/toupload/libOSMesa.so
+          else
+          llvm-strip --strip-all /tmp/mesa/toupload/libOSMesa.so
+          fi
       - name: Upload libraries
         uses: actions/upload-artifact@v2
         with:
