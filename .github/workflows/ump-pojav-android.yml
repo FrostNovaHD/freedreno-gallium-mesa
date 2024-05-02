@@ -59,7 +59,7 @@ jobs:
             -Dosmesa=true \
             -Dvulkan-drivers= \
             -Dgallium-drivers=freedreno,zink,panfrost \
-            -Dfreedreno-kmds=kgsl,msm \
+            -Dfreedreno-kmds=msm \
             -Dshared-glapi=false \
             -Dbuildtype=release
           ninja -C "build-android" install
@@ -73,7 +73,7 @@ jobs:
             -Dandroid-stub=true \
             -Dgallium-drivers= \
             -Dvulkan-drivers=freedreno \
-            -Dfreedreno-kmds=kgsl,msm \
+            -Dfreedreno-kmds=msm \
             -Dandroid-strict=false \
             -Db_lto=true
           ninja -C "build-android-turnip" install
