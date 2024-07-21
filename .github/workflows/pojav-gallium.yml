@@ -63,6 +63,7 @@ jobs:
           ninja -C "build-android" install
           meson setup "build-android-turnip" \
             --undefined,dynamic_lookup \
+            --unresolved-symbols=ignore-all \
             --cross-file "build-crossfile" \
             -Dbuildtype=release \
             --prefix=/tmp/mesa \
