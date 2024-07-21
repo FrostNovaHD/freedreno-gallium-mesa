@@ -66,7 +66,7 @@ jobs:
             -Dbuildtype=release \
             --prefix=/tmp/mesa \
             -Dplatforms=android \
-            -Dplatform-sdk-version=33 \
+            -Dplatform-sdk-version=34 \
             -Dandroid-stub=true \
             -Dgallium-drivers= \
             -Dvulkan-drivers=virtio-experimental 
