@@ -69,9 +69,7 @@ jobs:
             -Dplatform-sdk-version=33 \
             -Dandroid-stub=true \
             -Dgallium-drivers= \
-            -Dvulkan-drivers=virtio-experimental \
-            -Dfreedreno-kgsl=true \
-            -Db_lto=true
+            -Dvulkan-drivers=virtio-experimental 
           ninja -C "build-android-turnip" install
           cd /tmp/mesa/lib
           mv libOSMesa.so libOSMesa_znL.so
