@@ -16,9 +16,9 @@ pkgconfig = ['env', 'PKG_CONFIG_LIBDIR=.:/tmp/drm-static/lib/pkgconfig', '/usr/b
 
 [built-in options]
 c_args = ['-Wno-unused-parameter', '-O3', '--target=aarch64-linux-androideabi30', '-I$AOSP_INCLUDE']
-c_link_args = ['-L/system/lib', '-landroid-shmem', '-llog', '-lcutils', '-lsync']
+c_link_args = ['-L/system/lib', '-landroid-shmem', '-llog', '-lcutils', '-lsync' , '-DVK_USE_PLATFORM_ANDROID_KHR']
 cpp_args = ['-O3', '--target=aarch64-linux-androideabi30', '-I$AOSP_INCLUDE']
-cpp_link_args = ['-L/system/lib', '-landroid-shmem', '-llog', '-lcutils', '-lsync']
+cpp_link_args = ['-L/system/lib', '-landroid-shmem', '-llog', '-lcutils', '-lsync' ,'-DVK_USE_PLATFORM_ANDROID_KHR']
 
 [host_machine]
 system = 'linux'
