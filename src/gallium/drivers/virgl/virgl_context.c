@@ -21,7 +21,7 @@
  * USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <libsync.h>
+//#include <libsync.h>
 #include "pipe/p_shader_tokens.h"
 
 #include "compiler/nir/nir.h"
