@@ -69,7 +69,7 @@ jobs:
             -Dplatform-sdk-version=26 \
             -Dandroid-stub=true \
             -Dgallium-drivers= \
-            -Dvulkan-drivers=virtio-experimental \
+            -Dvulkan-drivers=virtio \
             -Db_lto=true
           ninja -C "build-android-turnip" install
           cd /tmp/mesa/lib
