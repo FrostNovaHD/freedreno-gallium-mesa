@@ -22,10 +22,9 @@ jobs:
       - name: Build
         run: |
           sudo apt update
-          sudo apt install -y meson libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
+          sudo apt install -y meson libxrandr-dev librust-blake3-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
           pip3 install mako
           export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
-          ninja -C "build-android" install
           envsubst <android-${{matrix.arch}} >build-crossfile
           meson setup "build-android" \
             --prefix=/tmp/mesa \
@@ -49,10 +48,10 @@ jobs:
             -Dbuildtype=release \
             --prefix=/tmp/mesa \
             -Dplatforms=android \
-            -Dplatform-sdk-version=33 \
+            -Dplatform-sdk-version=26 \
             -Dandroid-stub=true \
             -Dgallium-drivers= \
-            -Dvulkan-drivers=virtio-experimental \
+            -Dvulkan-drivers=virtio \
             -Db_lto=true
           ninja -C "build-android-turnip" install
           cd /tmp/mesa/lib
