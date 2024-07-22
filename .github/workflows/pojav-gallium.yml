@@ -37,10 +37,9 @@ jobs:
             -Damdgpu=disabled \
             -Dnouveau=disabled \
             -Dvmwgfx=disabled \
-            -Dfreedreno=enabled \
+            -Dfreedreno=disabled\
             -Dvc4=disabled \
             -Detnaviv=disabled \
-            -Dfreedreno-kgsl=true
           ninja -C "build-android" install
           cd ..
           envsubst <android-${{matrix.arch}} >build-crossfile
@@ -70,7 +69,6 @@ jobs:
             -Dandroid-stub=true \
             -Dgallium-drivers= \
             -Dvulkan-drivers=virtio-experimental \
-            -Dfreedreno-kgsl=true \
             -Db_lto=true
           ninja -C "build-android-turnip" install
           cd /tmp/mesa/lib
