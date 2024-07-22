@@ -42,7 +42,7 @@
 #include "virgl/virgl_public.h"
 #include "virtio-gpu/virgl_protocol.h"
 
-#include <xf86drm.h>
+//#include <xf86drm.h>
 #include <libsync.h>
 #include "drm-uapi/virtgpu_drm.h"
 
