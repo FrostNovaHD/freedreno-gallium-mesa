@@ -61,22 +61,11 @@ jobs:
             -Dshared-glapi=false \
             -Dbuildtype=release
           ninja -C "build-android" install
-          meson setup "build-android-turnip" \
-            --cross-file "build-crossfile" \
-            -Dbuildtype=release \
-            --prefix=/tmp/mesa \
-            -Dplatforms=android \
-            -Dplatform-sdk-version=33 \
-            -Dandroid-stub=true \
-            -Dgallium-drivers= \
-            -Dvulkan-drivers=virtio \
-            -Db_lto=true
-          ninja -C "build-android-turnip" install
           cd /tmp/mesa/lib
           mv libOSMesa.so libOSMesa_znL.so
 
-          mkdir /tmp/mesa/toupload
-          cp /tmp/mesa/lib/libOSMesa_znL.so /tmp/mesa/lib/libvulkan_virtio.so /tmp/mesa/toupload/
+      #    mkdir /tmp/mesa/toupload
+      #    cp /tmp/mesa/lib/libOSMesa_znL.so /tmp/mesa/lib/libvulkan_virtio.so /tmp/mesa/toupload/
 
       - name: Upload libraries
         uses: actions/upload-artifact@v2
