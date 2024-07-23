@@ -82,7 +82,7 @@ sw_screen_create_named(struct sw_winsys *winsys, const char *driver)
      // } else {
       //   struct pipe_screen_config dummy_cfg = { NULL, NULL };
         // screen = fd_screen_create(kbase_device_fd, &dummy_cfg, NULL);
-      }
+    //  }
    }
 //#else
 //#error You forgot to include Freedreno
